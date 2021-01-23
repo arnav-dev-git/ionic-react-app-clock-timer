@@ -1,12 +1,13 @@
 {
-  "appId": "com.example.app",
-  "appName": "timer",
+  "appId": "io.ionic.starter",
+  "appName": "Timer",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
   "plugins": {
     "SplashScreen": {
-      "showSpinner": true
+      "swipeBackEnabled": false,
+      "hardwareBackButton": false
     }
   },
   "cordova": {}

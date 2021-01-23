@@ -1,0 +1,12 @@
+.clock_wrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clock {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(145, 227, 241);
+  border-radius: 50%;
+}

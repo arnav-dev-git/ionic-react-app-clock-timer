@@ -7,6 +7,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import "./Tab3.css";
+import LightDarkMode from "../components/LightDarkMode";
 
 const Tab3 = () => {
   return (
@@ -22,7 +23,7 @@ const Tab3 = () => {
             <IonTitle size="large">Settings</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <h1 className="setting-text">Under construction</h1>
+        <LightDarkMode />
       </IonContent>
     </IonPage>
   );

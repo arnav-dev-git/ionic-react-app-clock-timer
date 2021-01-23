@@ -1,10 +1,15 @@
-import React, { useEffect, useState, useRef } from "react";
-import { IonItem, IonLabel, IonCardContent, IonDatetime } from "@ionic/react";
+import React, { useEffect, useState } from "react";
+import { IonCardContent, IonDatetime } from "@ionic/react";
+import useSound from "use-sound";
 import "./StopWatchStyle.css";
 
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import deskBell from "../music/deskBell.mp3";
 
 const StopWatch = () => {
+  //!sound
+  const [play] = useSound(deskBell);
+
   const [time, setTime] = useState("00:10");
   const [currentValue, setCurrentValue] = useState(
     Number(time.split(":")[0]) * 60 + Number(time.split(":")[1])
@@ -19,8 +24,8 @@ const StopWatch = () => {
   useEffect(() => {
     changeTime();
     SetCurrentValue();
-    console.log("use effect worked ! ", time, currentValue);
-  }, [currentValue, time]);
+    // console.log("use effect worked ! ", time, currentValue);
+  }, [time, currentValue]);
 
   const [start, setStart] = useState(false);
 
@@ -41,11 +46,10 @@ const StopWatch = () => {
   }
 
   function getCurrentValue() {
-    console.log(currentValue);
     return currentValue;
   }
 
-  function changeTime(e) {
+  function changeTime() {
     SetCurrentValue();
   }
 
@@ -60,9 +64,16 @@ const StopWatch = () => {
             duration={getCurrentValue()}
             colors={[
               ["#dd32d0", 0.2],
-              ["#17e93a", 0.7],
-              ["#e4f30d", 0.83],
+              ["#17e93a", 0.4],
+              ["#e4f30d", 0.5],
+              ["#85FFBD", 0.7],
+              ["#00ffd3", 0.76],
             ]}
+            // colors={[
+            //   ["#85FFBD", 0.3],
+            //   ["#FFFB7D", 0.5],
+            //   ["#00ffd3", 1.0],
+            // ]}
             initialRemainingTime={getCurrentValue()}
             // isLinearGradient={true}
             strokeWidth={25}
@@ -73,8 +84,9 @@ const StopWatch = () => {
             key={getCurrentValue()}
             onComplete={() => {
               setStart((e) => !e);
+              play();
               SetCurrentValue();
-              return [start, 0];
+              return [start, 200];
             }}
           >
             {children}
@@ -126,7 +138,6 @@ const StopWatch = () => {
         <h3>{time}</h3>
       </div>
       {TimeSpinner()}
-
       {TimeSelector()}
     </>
   );
