@@ -21,7 +21,7 @@ const ExploreContainer = ({ name }) => {
     <div className="container">
       <strong>
         <Clock />
-        <h1>{timeString}</h1>
+        <h1 className="time-string">{timeString}</h1>
       </strong>
       {/* <div className="date">{dateString}</div> */}
     </div>

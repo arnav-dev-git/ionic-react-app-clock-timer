@@ -55,6 +55,7 @@
   --ion-color-dark-contrast-rgb: 255, 255, 255;
   --ion-color-dark-shade: #1e2023;
   --ion-color-dark-tint: #383a3e;
+  --ion-color-dark-clock: #3a7be0;
 
   /** medium **/
   --ion-color-medium: #92949c;
@@ -122,6 +123,7 @@ body.dark {
   --ion-color-dark-contrast-rgb: 0, 0, 0;
   --ion-color-dark-shade: #d7d8da;
   --ion-color-dark-tint: #f5f6f9;
+  --ion-color-dark-clock: #ffffff;
 
   --ion-color-medium: #989aa2;
   --ion-color-medium-rgb: 152, 154, 162;
